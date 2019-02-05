@@ -29,50 +29,50 @@
             if(computerSelection=="Rock"){
                 computerScore++;
                 playerScore++;
-                return "It's a TIE!";
+                console.log( "It's a TIE!");
             }
             else if(computerSelection=="Scissors"){
                 playerScore++;
-                return "You win! Rock beats scissors!";
+                console.log( "You win! Rock beats scissors!");
             }
             else{
                 computerScore++;
-                return "You lose! Paper beats rock!";
+                console.log( "You lose! Paper beats rock!");
             }
         }
         else if (playerSelection=="paper"){
             if(computerSelection=="Rock"){
                 playerScore++;
-                return "You win! Paper beats rock!";
+                console.log( "You win! Paper beats rock!");
             }
             else if(computerSelection=="Scissors"){
                 computerScore++;
-                return "You lose! Scissors beats paper!";
+                console.log( "You lose! Scissors beats paper!");
             }
             else {
                 computerScore++;
                 playerScore++;
-                return "It's a TIE!";
+                console.log( "It's a TIE!");
             }
         }
         else if (playerSelection=="scissors"){
             if(computerSelection=="Rock"){
                 computerScore++;
-                return "You lose! Rock beats scissors!";
+                console.log( "You lose! Rock beats scissors!");
             }
             else if (computerSelection=="Scissors"){
                 computerScore++;
                 playerScore++;
-                return "It's a TIE!";
+                console.log( "It's a TIE!");
             }
             else{
                 playerScore++;
-                return "You win! Scissors beats paper!";
+                console.log( "You win! Scissors beats paper!");
             }
         }
 
         else{
-            return "Please enter rock, paper or scissors!";
+            console.log( "Please enter rock, paper or scissors!");
         }
     }
 
