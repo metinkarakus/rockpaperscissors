@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    
+    var computerScore = 0;
+    var playerScore = 0;
+
+    function computerPlay () {
+        let rnd =  Math.floor((Math.random() * 3) + 1);
+
+        switch(rnd){
+            case 1:
+                return "Rock";
+                break;
+            case 2:
+                return "Paper";
+                break;
+            case 3:
+                return "Scissors";
+                break;
+        }
+    }
+
+    function playRound (playerSelection, computerSelection){
+        playerSelection = playerSelection.toLowerCase();
+
+        if(playerSelection == "rock"){
+            if(computerSelection=="Rock"){
+                computerScore++;
+                playerScore++;
+                return "It's a TIE!";
+            }
+            else if(computerSelection=="Scissors"){
+                playerScore++;
+                return "You win! Rock beats scissors!";
+            }
+            else{
+                computerScore++;
+                return "You lose! Paper beats rock!";
+            }
+        }
+        else if (playerSelection=="paper"){
+            if(computerSelection=="Rock"){
+                playerScore++;
+                return "You win! Paper beats rock!";
+            }
+            else if(computerSelection=="Scissors"){
+                computerScore++;
+                return "You lose! Scissors beats paper!";
+            }
+            else {
+                computerScore++;
+                playerScore++;
+                return "It's a TIE!";
+            }
+        }
+        else if (playerSelection=="scissors"){
+            if(computerSelection=="Rock"){
+                computerScore++;
+                return "You lose! Rock beats scissors!";
+            }
+            else if (computerSelection=="Scissors"){
+                computerScore++;
+                playerScore++;
+                return "It's a TIE!";
+            }
+            else{
+                playerScore++;
+                return "You win! Scissors beats paper!";
+            }
+        }
+
+        else{
+            return "Please enter rock, paper or scissors!";
+        }
+    }
+
+    function game(){
+        let rounds = 0;
+
+        while (rounds!=5){
+            playRound(prompt("Select rock, paper or scissors!"), computerPlay());
+            rounds++;
+        }
+
+        if(playerScore>computerScore){
+            return "Congratulations!! You WON!";
+        }
+        else{
+            return "Sorry, you LOST! Maybe next time!";
+        }
+
+    }
+
+    console.log(game());
+    
+    
+    </script>
+</head>
+
+
+</html>
