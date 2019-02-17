@@ -1,103 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-    
-    var computerScore = 0;
-    var playerScore = 0;
-
-    function computerPlay () {
-        let rnd =  Math.floor((Math.random() * 3) + 1);
-
-        switch(rnd){
-            case 1:
-                return "Rock";
-                break;
-            case 2:
-                return "Paper";
-                break;
-            case 3:
-                return "Scissors";
-                break;
-        }
-    }
-
-    function playRound (playerSelection, computerSelection){
-        playerSelection = playerSelection.toLowerCase();
-
-        if(playerSelection == "rock"){
-            if(computerSelection=="Rock"){
-                computerScore++;
-                playerScore++;
-                console.log( "It's a TIE!");
-            }
-            else if(computerSelection=="Scissors"){
-                playerScore++;
-                console.log( "You win! Rock beats scissors!");
-            }
-            else{
-                computerScore++;
-                console.log( "You lose! Paper beats rock!");
-            }
-        }
-        else if (playerSelection=="paper"){
-            if(computerSelection=="Rock"){
-                playerScore++;
-                console.log( "You win! Paper beats rock!");
-            }
-            else if(computerSelection=="Scissors"){
-                computerScore++;
-                console.log( "You lose! Scissors beats paper!");
-            }
-            else {
-                computerScore++;
-                playerScore++;
-                console.log( "It's a TIE!");
-            }
-        }
-        else if (playerSelection=="scissors"){
-            if(computerSelection=="Rock"){
-                computerScore++;
-                console.log( "You lose! Rock beats scissors!");
-            }
-            else if (computerSelection=="Scissors"){
-                computerScore++;
-                playerScore++;
-                console.log( "It's a TIE!");
-            }
-            else{
-                playerScore++;
-                console.log( "You win! Scissors beats paper!");
-            }
-        }
-
-        else{
-            console.log( "Please enter rock, paper or scissors!");
-        }
-    }
-
-    function game(){
-        let rounds = 0;
-
-        while (rounds!=5){
-            playRound(prompt("Select rock, paper or scissors!"), computerPlay());
-            rounds++;
-        }
-
-        if(playerScore>computerScore){
-            return "Congratulations!! You WON!";
-        }
-        else{
-            return "Sorry, you LOST! Maybe next time!";
-        }
-
-    }
-
-    console.log(game());
-    
-    
-    </script>
+   <title>Play RPS!</title>
+   <link rel="stylesheet" href="./docs/style.css">
 </head>
+<body>
+    <h1 style="text-align: center"><span style="color:#1aaba0;">Rock</span> &nbsp&nbsp<span style="color:#e3222c">Paper</span>&nbsp&nbsp
+         <span style="color:#b4cd32;">Scissors</span></h1>
+    <h3 style="text-align: center">First to reach 5 wins!</h3>
+    <img class="button" tabindex="0" id="rock" src="./docs/rock.png" width="200px" height="200px"></button>
+    <img class="button" tabindex="0" id="paper" src="./docs/paper.png" width="200px" height="200px"></button>
+    <img class="button" tabindex="0" id="scissors" src="./docs/scissors.png" width="200px" height="200px"></button>
+    <div id="scores">
+    <div id="compscore"><p>Computer's score is: <br><div id="animate1" style="text-align:center"><span id="cscore"></span></div></p></div>
+    <div id="playascore"><p>Your score is;<br><div id="animate2" style="text-align: center"><span id="pscore"></span></div></p></div>
+    </div>
+    <div><p id="status" style="text-align: center">Select one;</p><br></div>
+    <div id="buttondiv"><button id="reset" style="visibility: hidden">Restart</button></div>
+
+    <script src="./docs/sc.js"></script>
+</body>
 
 
 </html>

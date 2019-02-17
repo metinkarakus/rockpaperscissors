@@ -1,0 +1,95 @@
+body{
+    background-color: #b7aca3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#scores{
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+}
+
+@keyframes deneme{
+   from{color:black;}
+   to{color:red;
+    font-weight: bolder;
+    font-size: 6em;}
+}
+
+.animated{
+    animation-name: deneme;
+    animation-duration: 0.7s;
+}
+
+#pscore, #cscore {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#compscore{
+    width: 200px;
+    float: left;
+    text-align: center;
+}
+
+#playascore{
+    width: 200px;
+    float: right;
+    text-align: center;
+}
+
+.button{
+   display: inline-block;
+   margin: auto;
+   border-radius: 1em;
+   margin-top: 15%;
+   border: solid black 3px;
+    
+}
+
+#paper{
+    position: absolute;
+    margin-left: 43%;
+}
+
+#scissors{
+    position: absolute;
+    margin-left: 63%;
+}
+
+#rock{
+    position: absolute;
+    margin-left: 23%;
+}
+
+:hover.button {
+    border:solid yellow 10px;
+    transform: scale(1.2,1.2);
+  }
+
+
+:focus.button{
+      transform: scale(0.7,0.7);
+      transition: all .6s ease;
+  }
+
+#buttondiv{
+    text-align: center;
+}
+
+#reset {
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    height: 46px;
+    line-height: 37px;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+    color: black;
+    cursor: pointer;
+    font-family: arial,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: -webkit-center;
+    padding:0 1em;
+
+}
